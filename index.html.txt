@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no"
+  />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Load Optimizer" />
+
+  <title>Load Optimizer</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="phone-app">
+    <header class="app-head">
+      <div class="title-wrap">
+        <h1>Load Optimizer</h1>
+        <p>40ftHQ | Auto Calculate</p>
+      </div>
+      <div class="status-badge" id="statusBadge">Ready</div>
+    </header>
+
+    <main class="screen">
+      <section class="hero-grid">
+        <div class="hero-card main-result">
+          <span class="label">Best Plan</span>
+          <strong id="bestPlan">-</strong>
+          <small id="bestSub">CBM: - | Tons: -</small>
+        </div>
+
+        <div class="hero-card">
+          <span class="label">CBM/PCS</span>
+          <strong id="cbmPerPcs">-</strong>
+        </div>
+
+        <div class="hero-card">
+          <span class="label">PCS/CBM</span>
+          <strong id="pcsPerCbm">-</strong>
+        </div>
+      </section>
+
+      <section class="input-grid">
+        <label class="field">
+          <span>Thick</span>
+          <input id="thickness" type="number" inputmode="decimal" step="0.1" placeholder="mm" />
+        </label>
+
+        <label class="field">
+          <span>Width</span>
+          <input id="width" type="number" inputmode="decimal" step="1" value="1220" />
+        </label>
+
+        <label class="field">
+          <span>Length</span>
+          <input id="length" type="number" inputmode="decimal" step="1" value="2440" />
+        </label>
+
+        <label class="field">
+          <span>kg/cbm</span>
+          <input id="density" type="number" inputmode="decimal" step="1" value="620" />
+        </label>
+
+        <label class="field">
+          <span>Pcs min</span>
+          <input id="pcsMin" type="number" inputmode="numeric" step="1" value="30" />
+        </label>
+
+        <label class="field">
+          <span>Pcs max</span>
+          <input id="pcsMax" type="number" inputmode="numeric" step="1" value="80" />
+        </label>
+      </section>
+
+      <section class="quick-grid">
+        <div class="mini-card">
+          <span class="label">Bundles</span>
+          <strong id="bundleCount">-</strong>
+        </div>
+        <div class="mini-card">
+          <span class="label">Total PCS</span>
+          <strong id="totalPcs">-</strong>
+        </div>
+        <div class="mini-card">
+          <span class="label">CBM</span>
+          <strong id="totalCbm">-</strong>
+        </div>
+        <div class="mini-card">
+          <span class="label">Tons</span>
+          <strong id="totalTons">-</strong>
+        </div>
+      </section>
+
+      <details class="detail-box">
+        <summary>Chi tiết phương án</summary>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Pcs/Bundle</th>
+                <th>Bundles</th>
+                <th>Total PCS</th>
+                <th>CBM</th>
+                <th>Tons</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="resultTable">
+              <tr>
+                <td colspan="6" class="empty">Chưa có dữ liệu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
